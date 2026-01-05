@@ -1,0 +1,5 @@
+# Conversão de tipos (coerção, type convertion, typecasting, coercion)
+print(int("10") + 2)
+print('' + 'b')
+print(bool(''))
+print(bool(' '))
