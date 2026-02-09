@@ -23,7 +23,11 @@ for questao in perguntas:
     print('\nOpções:')
     for i, opcao in enumerate(questao['Opções']):
         print(f'{letras[i]}) {opcao}')
-    opcao = input('Escolha uma opção: ').lower().strip()
+    while True:
+        opcao = input('Escolha uma opção: ').lower().strip()
+        if opcao in letras and len(opcao) == 1:
+            break
+        print(f'Opção inválida! Escolha entre: {', '.join(letras)}')
     indice_resposta = questao['Opções'].index(questao['Resposta'])
     letra_resposta = letras[indice_resposta]
     if opcao == letra_resposta:
