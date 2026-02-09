@@ -1,3 +1,5 @@
+import string
+
 perguntas = [
     {
         'Pergunta': 'Quanto é 2+2?',
@@ -14,9 +16,14 @@ perguntas = [
         'Opções': ['4', '5', '2', '1'],
         'Resposta': '5',
     },
+    {
+        'Pergunta': 'Quanto é 9*9?',
+        'Opções': ['9', '81', '72', '118', '84'],
+        'Resposta': '81',
+    }
 ]
 
-letras = 'abcd'
+letras = string.ascii_lowercase
 acertos = 0
 for questao in perguntas:
     print(f'Pergunta: {questao['Pergunta']}')
