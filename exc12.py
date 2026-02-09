@@ -16,23 +16,21 @@ perguntas = [
     },
 ]
 
+letras = 'abcd'
 acertos = 0
 for questao in perguntas:
-    indice = 0
     print(f'Pergunta: {questao['Pergunta']}')
-    print()
-    print('Opções:')
-    for opcao in questao['Opções']:
-        print(f'{indice}) {opcao}')
-        indice += 1
-    opcao = int(input('Escolha uma opção: '))
+    print('\nOpções:')
+    for i, opcao in enumerate(questao['Opções']):
+        print(f'{letras[i]}) {opcao}')
+    opcao = input('Escolha uma opção: ').lower().strip()
     indice_resposta = questao['Opções'].index(questao['Resposta'])
-    if opcao == indice_resposta:
-        print('Acertou!')
+    letra_resposta = letras[indice_resposta]
+    if opcao == letra_resposta:
+        print('Acertou!\n')
         acertos += 1
-        print()
     else:
         print('Errou!')
-print(f'Você acertou {acertos}/{len(perguntas)}')
+print(f'\nVocê acertou {acertos}/{len(perguntas)}!')
 
 
