@@ -26,13 +26,17 @@ lista_de_listas_de_inteiros = [
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
 
-for lista in lista_de_listas_de_inteiros:
-    s1 = set()
-    for numero in lista:
-        if numero in s1:
-            print(f'{lista} -> {numero}')
+def encontra_numeros_duplicados(lista_de_inteiros):
+    numeros_checados = set()
+    primeiro_duplicado = -1
+
+    for numero in lista_de_inteiros:
+        if numero in numeros_checados:
+            primeiro_duplicado = numero
             break
-        else: 
-            s1.add(numero)
-    else:
-        print(f'{lista} -> -1')
+        numeros_checados.add(numero)
+
+    return primeiro_duplicado
+
+for lista in lista_de_listas_de_inteiros:
+    print(f'{lista} -> {encontra_numeros_duplicados(lista)}')
