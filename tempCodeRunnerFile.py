@@ -1,1 +1,1 @@
-0
+produto['preco'] * 1.1, 2
